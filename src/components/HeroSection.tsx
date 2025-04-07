@@ -10,6 +10,11 @@ const HeroSection = () => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animate-fade-in');
+          entry.target.classList.remove('opacity-0');
+          // Once the animation is complete, ensure element stays visible
+          setTimeout(() => {
+            entry.target.classList.add('opacity-100');
+          }, 300); // Match this to animation duration
         }
       });
     }, { threshold: 0.1 });

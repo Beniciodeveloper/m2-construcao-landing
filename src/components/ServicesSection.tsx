@@ -11,6 +11,11 @@ const ServicesSection = () => {
         if (entry.isIntersecting) {
           setTimeout(() => {
             entry.target.classList.add('animate-fade-in-up');
+            entry.target.classList.remove('opacity-0');
+            // Ensure element stays visible after animation
+            setTimeout(() => {
+              entry.target.classList.add('opacity-100');
+            }, 300);
           }, index * 150); // Stagger the animations
         }
       });

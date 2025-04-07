@@ -10,6 +10,11 @@ const QuoteSection = () => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animate-fade-in');
+          entry.target.classList.remove('opacity-0');
+          // Ensure element remains visible after animation
+          setTimeout(() => {
+            entry.target.classList.add('opacity-100');
+          }, 300);
         }
       });
     }, { threshold: 0.1 });

@@ -5,12 +5,18 @@ import { Award, Clock, ThumbsUp, Banknote } from 'lucide-react';
 const AdvantagesSection = () => {
   useEffect(() => {
     const elements = document.querySelectorAll('.reveal-advantage');
+    const sectionElements = document.querySelectorAll('.reveal-element');
     
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
           setTimeout(() => {
             entry.target.classList.add('animate-fade-in-up');
+            entry.target.classList.remove('opacity-0');
+            // Ensure element remains visible after animation
+            setTimeout(() => {
+              entry.target.classList.add('opacity-100');
+            }, 300);
           }, index * 150); // Stagger the animations
         }
       });
@@ -20,9 +26,29 @@ const AdvantagesSection = () => {
       observer.observe(element);
     });
     
+    // Also handle the section subtitle
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+          entry.target.classList.remove('opacity-0');
+          setTimeout(() => {
+            entry.target.classList.add('opacity-100');
+          }, 300);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    sectionElements.forEach(element => {
+      sectionObserver.observe(element);
+    });
+    
     return () => {
       elements.forEach(element => {
         observer.unobserve(element);
+      });
+      sectionElements.forEach(element => {
+        sectionObserver.unobserve(element);
       });
     };
   }, []);
