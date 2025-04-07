@@ -12,15 +12,15 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-m2green text-white font-medium py-3 px-8 rounded-md transition-all duration-300 hover:bg-m2green/80 shadow-md hover:shadow-lg;
+    @apply bg-m2green text-white font-medium py-3 px-8 rounded-xl transition-all duration-300 hover:bg-m2green/80 shadow-md hover:shadow-lg hover:scale-105;
   }
   
   .btn-secondary {
-    @apply bg-m2red text-white font-medium py-3 px-8 rounded-md transition-all duration-300 hover:bg-m2red/80 shadow-md hover:shadow-lg;
+    @apply bg-m2red text-white font-medium py-3 px-8 rounded-xl transition-all duration-300 hover:bg-m2red/80 shadow-md hover:shadow-lg hover:scale-105;
   }
   
   .service-card {
-    @apply bg-white rounded-lg shadow-md p-6 border border-gray-100 hover:shadow-lg transition-all duration-300;
+    @apply bg-white rounded-xl shadow-md p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1;
   }
   
   .section-title {
@@ -32,7 +32,7 @@
   }
 
   .whatsapp-button {
-    @apply fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg z-50 hover:bg-[#20ba5a] transition-colors;
+    @apply fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg z-50 hover:bg-[#20ba5a] transition-colors hover:scale-110;
   }
 }
 
@@ -56,6 +56,17 @@
   }
 }
 
+@keyframes cascadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .animate-fade-in {
   animation: fadeIn 0.6s ease forwards;
 }
@@ -64,12 +75,35 @@
   animation: fadeInUp 0.6s ease forwards;
 }
 
-/* Make sure sections load with opacity-0 first */
+.animate-cascade {
+  animation: cascadeDown 0.5s ease forwards;
+}
+
+/* Make sure sections have proper spacing */
 section {
   overflow-x: hidden;
+  padding: 5rem 0;
 }
 
 /* Use this class to ensure elements stay visible after animation */
 .opacity-100 {
   opacity: 1 !important;
+}
+
+/* Add smooth transitions to all interactive elements */
+a, button {
+  transition: all 0.3s ease;
+}
+
+/* Footer specific styles */
+.footer-link {
+  @apply flex items-center text-gray-300 hover:text-white transition-colors;
+}
+
+.footer-link:hover svg {
+  @apply text-m2red transform translate-x-1;
+}
+
+.footer-social {
+  @apply bg-gray-800 hover:bg-m2green text-white p-2 rounded-full transition-all duration-300 hover:scale-110;
 }

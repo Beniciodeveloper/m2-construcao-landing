@@ -31,7 +31,7 @@ const ContactSection = () => {
   }, []);
 
   return (
-    <section id="contact" className="bg-gray-50">
+    <section id="contact" className="bg-gray-50 py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="section-title">Entre em Contato</h2>
@@ -40,71 +40,75 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 max-w-3xl mx-auto">
           <div className="reveal-element opacity-0">
-            <div className="bg-white rounded-lg shadow-md p-8 border border-gray-100">
-              <h3 className="text-2xl font-display font-semibold mb-6">Informações de Contato</h3>
+            <div className="bg-white rounded-xl shadow-md p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
+              <h3 className="text-2xl font-display font-semibold mb-6 text-center">Informações de Contato</h3>
               
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <MapPin className="text-m2green mr-4 mt-1" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Endereço</h4>
-                    <p className="text-gray-700">
-                      Avenida Antônio Carlos Magalhães, 2501<br />
-                      Edifício Profissional Center – Sala 324<br />
-                      Salvador, BA
-                    </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-6">
+                  <div className="flex items-start">
+                    <MapPin className="text-m2green mr-4 mt-1" />
+                    <div>
+                      <h4 className="font-semibold mb-1">Endereço</h4>
+                      <p className="text-gray-700">
+                        Avenida Antônio Carlos Magalhães, 2501<br />
+                        Edifício Profissional Center – Sala 324<br />
+                        Salvador, BA
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <Phone className="text-m2green mr-4 mt-1" />
+                    <div>
+                      <h4 className="font-semibold mb-1">Telefone</h4>
+                      <p className="text-gray-700">
+                        <a href="tel:+5571983209903" className="hover:text-m2green transition-colors">
+                          (71) 98320-9903
+                        </a><br />
+                        <a href="tel:+5571991017313" className="hover:text-m2green transition-colors">
+                          (71) 99101-7313 (WhatsApp)
+                        </a>
+                      </p>
+                    </div>
                   </div>
                 </div>
                 
-                <div className="flex items-start">
-                  <Phone className="text-m2green mr-4 mt-1" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Telefone</h4>
-                    <p className="text-gray-700">
-                      <a href="tel:+5571983209903" className="hover:text-m2green transition-colors">
-                        (71) 98320-9903
-                      </a><br />
-                      <a href="tel:+5571991017313" className="hover:text-m2green transition-colors">
-                        (71) 99101-7313 (WhatsApp)
-                      </a>
-                    </p>
+                <div className="space-y-6">
+                  <div className="flex items-start">
+                    <Mail className="text-m2green mr-4 mt-1" />
+                    <div>
+                      <h4 className="font-semibold mb-1">E-mail</h4>
+                      <p className="text-gray-700">
+                        <a href="mailto:m2comercial@hotmail.com" className="hover:text-m2green transition-colors">
+                          m2comercial@hotmail.com
+                        </a>
+                      </p>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <Mail className="text-m2green mr-4 mt-1" />
-                  <div>
-                    <h4 className="font-semibold mb-1">E-mail</h4>
-                    <p className="text-gray-700">
-                      <a href="mailto:m2comercial@hotmail.com" className="hover:text-m2green transition-colors">
-                        m2comercial@hotmail.com
-                      </a>
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <Clock className="text-m2green mr-4 mt-1" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Horário de Atendimento</h4>
-                    <p className="text-gray-700">
-                      Segunda a Sexta: 8h às 18h<br />
-                      Sábado: 8h às 12h
-                    </p>
+                  
+                  <div className="flex items-start">
+                    <Clock className="text-m2green mr-4 mt-1" />
+                    <div>
+                      <h4 className="font-semibold mb-1">Horário de Atendimento</h4>
+                      <p className="text-gray-700">
+                        Segunda a Sexta: 8h às 18h<br />
+                        Sábado: 8h às 12h
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
               
               <div className="mt-8">
-                <h4 className="font-semibold mb-3">Redes Sociais</h4>
-                <div className="flex space-x-4">
+                <h4 className="font-semibold mb-3 text-center">Redes Sociais</h4>
+                <div className="flex justify-center space-x-4 mb-6">
                   <a 
                     href="https://wa.me/5571991017313" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-[#25D366] text-white p-3 rounded-full hover:bg-[#25D366]/80 transition-colors"
+                    className="bg-[#25D366] text-white p-3 rounded-full hover:bg-[#25D366]/80 transition-all duration-300 hover:scale-110 transform"
                     aria-label="WhatsApp"
                   >
                     <svg className="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -112,40 +116,37 @@ const ContactSection = () => {
                     </svg>
                   </a>
                   <a 
-                    href="https://www.instagram.com" 
+                    href="https://wa.me/5571991017313" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-[#E4405F] text-white p-3 rounded-full hover:bg-[#E4405F]/80 transition-colors"
+                    className="bg-[#E4405F] text-white p-3 rounded-full hover:bg-[#E4405F]/80 transition-all duration-300 hover:scale-110 transform"
                     aria-label="Instagram"
                   >
                     <Instagram className="w-5 h-5" />
                   </a>
                   <a 
-                    href="https://www.youtube.com" 
+                    href="https://wa.me/5571991017313" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-[#FF0000] text-white p-3 rounded-full hover:bg-[#FF0000]/80 transition-colors"
+                    className="bg-[#FF0000] text-white p-3 rounded-full hover:bg-[#FF0000]/80 transition-all duration-300 hover:scale-110 transform"
                     aria-label="YouTube"
                   >
                     <Youtube className="w-5 h-5" />
                   </a>
                 </div>
+                
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.858907948763!2d-38.476883023659286!3d-12.990178061865945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7161b47e4e81669%3A0x1d240c9e10b91d2c!2sCondom%C3%ADnio%20Edif%C3%ADcio%20Profissional%20Center!5e0!3m2!1spt-BR!2sbr!4v1712539184993!5m2!1spt-BR!2sbr" 
+                  width="100%" 
+                  height="300" 
+                  style={{ border: 0 }} 
+                  allowFullScreen 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="M2 Construção e Reforma Localização"
+                  className="rounded-xl shadow-md mt-4"
+                ></iframe>
               </div>
-            </div>
-          </div>
-
-          <div className="reveal-element opacity-0">
-            <div className="bg-white rounded-lg shadow-md overflow-hidden h-full">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.858907948763!2d-38.476883023659286!3d-12.990178061865945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7161b47e4e81669%3A0x1d240c9e10b91d2c!2sCondom%C3%ADnio%20Edif%C3%ADcio%20Profissional%20Center!5e0!3m2!1spt-BR!2sbr!4v1712539184993!5m2!1spt-BR!2sbr" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0, minHeight: '400px' }} 
-                allowFullScreen 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-                title="M2 Construção e Reforma Localização"
-              ></iframe>
             </div>
           </div>
         </div>

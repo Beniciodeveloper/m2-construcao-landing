@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { Wrench, Zap, Leaf, ClipboardList, FileText, Phone } from 'lucide-react';
+import { Wrench, Zap, Leaf, ClipboardList, FileText, Phone, Home } from 'lucide-react';
 
 const ServicesSection = () => {
   useEffect(() => {
@@ -62,11 +62,17 @@ const ServicesSection = () => {
       title: 'Consultoria Técnica',
       description: 'Assessoria especializada para seu projeto, obra ou reforma.',
       link: 'https://wa.me/5571991017313?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20Consultoria%20Técnica'
+    },
+    {
+      icon: <Home size={40} className="text-m2green mb-4" />,
+      title: 'Design de Interiores',
+      description: 'Transforme seu espaço com projetos personalizados e elegantes.',
+      link: 'https://wa.me/5571991017313?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20Design%20de%20Interiores'
     }
   ];
 
   return (
-    <section id="services" className="bg-gray-50">
+    <section id="services" className="bg-gray-50 py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="section-title">Nossos Serviços</h2>
@@ -81,7 +87,9 @@ const ServicesSection = () => {
               key={index} 
               className="reveal-service opacity-0 service-card flex flex-col items-center text-center"
             >
-              {service.icon}
+              <div className="bg-gray-50 p-3 rounded-full mb-2">
+                {service.icon}
+              </div>
               <h3 className="text-xl font-display font-semibold mb-3">{service.title}</h3>
               <p className="text-gray-600 mb-6">{service.description}</p>
               <div className="mt-auto">

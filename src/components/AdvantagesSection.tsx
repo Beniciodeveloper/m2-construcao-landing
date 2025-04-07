@@ -77,7 +77,7 @@ const AdvantagesSection = () => {
   ];
 
   return (
-    <section id="advantages" className="bg-gradient-to-br from-m2green/90 to-m2green/70 text-white">
+    <section id="advantages" className="bg-gradient-to-br from-m2green/90 to-m2green/70 text-white py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="section-title text-white">Nossos Diferenciais</h2>
@@ -90,7 +90,7 @@ const AdvantagesSection = () => {
           {advantages.map((advantage, index) => (
             <div 
               key={index} 
-              className="reveal-advantage opacity-0 bg-m2red/90 rounded-lg p-6 text-center flex flex-col items-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              className="reveal-advantage opacity-0 bg-m2red/90 rounded-xl p-6 text-center flex flex-col items-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
             >
               <div className="rounded-full p-4 bg-m2red">
                 {advantage.icon}
@@ -106,7 +106,7 @@ const AdvantagesSection = () => {
             href="https://wa.me/5571991017313?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20diferenciais%20da%20M2" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="bg-white text-m2green hover:bg-gray-100 font-medium py-3 px-8 rounded-md transition-all duration-300 shadow-md hover:shadow-lg inline-block"
+            className="bg-white text-m2green hover:bg-gray-100 font-medium py-3 px-8 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg inline-block hover:scale-105 transform"
           >
             Solicitar Proposta Diferenciada
           </a>

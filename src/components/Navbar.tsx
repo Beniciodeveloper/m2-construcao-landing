@@ -1,10 +1,11 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Phone } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +17,13 @@ const Navbar = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
+    
+    // Apply cascade animation on mount
+    const navLinks = navRef.current?.querySelectorAll('.nav-link');
+    navLinks?.forEach((link, index) => {
+      (link as HTMLElement).style.animationDelay = `${index * 0.1}s`;
+    });
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -30,21 +38,29 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`py-4 w-full transition-all duration-300 ${isScrolled ? 'sticky-nav' : 'bg-transparent'}`}>
+    <nav 
+      className={`py-4 w-full transition-all duration-300 fixed top-0 left-0 z-50 ${
+        isScrolled 
+          ? 'bg-white/90 backdrop-blur-md shadow-md' 
+          : 'bg-transparent'
+      }`}
+      ref={navRef}
+    >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          <div className="flex items-center">
+          <div className="flex items-center animate-cascade">
             <h1 className="text-2xl font-display font-bold text-m2green">M2</h1>
             <p className="ml-2 hidden sm:block text-gray-600">Construção e Reforma</p>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-6">
-            {navItems.map((item) => (
+            {navItems.map((item, index) => (
               <a 
                 key={item.name} 
                 href={item.href} 
-                className="text-gray-700 hover:text-m2green font-medium transition-colors"
+                className="nav-link text-gray-700 hover:text-m2green font-medium transition-colors animate-cascade opacity-0"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {item.name}
               </a>
@@ -53,7 +69,8 @@ const Navbar = () => {
               href="https://wa.me/5571991017313" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="btn-primary flex items-center"
+              className="btn-primary flex items-center animate-cascade opacity-0"
+              style={{ animationDelay: `${navItems.length * 0.1}s` }}
             >
               <Phone size={18} className="mr-2" />
               <span>WhatsApp</span>
@@ -62,7 +79,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden flex items-center"
+            className="md:hidden flex items-center animate-cascade"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <svg 
@@ -84,13 +101,14 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 bg-white rounded-lg shadow-lg p-4 absolute left-4 right-4 z-50">
+          <div className="md:hidden mt-4 bg-white/95 backdrop-blur-md rounded-xl shadow-lg p-4 absolute left-4 right-4 z-50 border border-gray-100">
             <div className="flex flex-col space-y-3">
-              {navItems.map((item) => (
+              {navItems.map((item, index) => (
                 <a 
                   key={item.name} 
                   href={item.href} 
-                  className="text-gray-700 hover:text-m2green py-2 px-3 rounded-md hover:bg-gray-50 transition-colors"
+                  className="text-gray-700 hover:text-m2green py-2 px-3 rounded-lg hover:bg-gray-50 transition-colors animate-cascade opacity-0"
+                  style={{ animationDelay: `${index * 0.05}s` }}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
@@ -100,7 +118,8 @@ const Navbar = () => {
                 href="https://wa.me/5571991017313" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="btn-primary text-center mt-2"
+                className="btn-primary text-center mt-2 animate-cascade opacity-0"
+                style={{ animationDelay: `${navItems.length * 0.05}s` }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Phone size={18} className="inline-block mr-2" />

@@ -1,13 +1,42 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { MapPin, Phone, Mail, ChevronRight } from 'lucide-react';
 
 const Footer = () => {
+  useEffect(() => {
+    const elements = document.querySelectorAll('.footer-animate');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('animate-fade-in-up');
+            entry.target.classList.remove('opacity-0');
+            // Ensure element stays visible after animation
+            setTimeout(() => {
+              entry.target.classList.add('opacity-100');
+            }, 300);
+          }, index * 100); // Stagger the animations
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    elements.forEach(element => {
+      observer.observe(element);
+    });
+    
+    return () => {
+      elements.forEach(element => {
+        observer.unobserve(element);
+      });
+    };
+  }, []);
+
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          <div>
+          <div className="footer-animate opacity-0">
             <h3 className="text-xl font-display font-bold mb-4">M2 Construção e Reforma</h3>
             <p className="text-gray-400 mb-4">
               Soluções completas em engenharia para projetos residenciais, comerciais e industriais em Salvador e região.
@@ -17,7 +46,7 @@ const Footer = () => {
                 href="https://wa.me/5571991017313" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-gray-800 hover:bg-m2green text-white p-2 rounded-full transition-colors"
+                className="footer-social"
                 aria-label="WhatsApp"
               >
                 <svg className="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -25,10 +54,10 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href="https://www.instagram.com" 
+                href="https://wa.me/5571991017313" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-gray-800 hover:bg-m2green text-white p-2 rounded-full transition-colors"
+                className="footer-social"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -36,10 +65,10 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href="https://www.youtube.com" 
+                href="https://wa.me/5571991017313" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-gray-800 hover:bg-m2green text-white p-2 rounded-full transition-colors"
+                className="footer-social"
                 aria-label="YouTube"
               >
                 <svg className="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -47,9 +76,23 @@ const Footer = () => {
                 </svg>
               </a>
             </div>
+            
+            <div className="mt-6">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.858907948763!2d-38.476883023659286!3d-12.990178061865945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7161b47e4e81669%3A0x1d240c9e10b91d2c!2sCondom%C3%ADnio%20Edif%C3%ADcio%20Profissional%20Center!5e0!3m2!1spt-BR!2sbr!4v1712539184993!5m2!1spt-BR!2sbr" 
+                width="100%" 
+                height="200" 
+                style={{ border: 0, borderRadius: '0.75rem' }}
+                allowFullScreen 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="M2 Construção e Reforma Localização"
+                className="mt-4 rounded-xl shadow-md"
+              ></iframe>
+            </div>
           </div>
           
-          <div>
+          <div className="footer-animate opacity-0">
             <h3 className="text-xl font-display font-bold mb-4">Contatos</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
@@ -74,16 +117,16 @@ const Footer = () => {
             </ul>
           </div>
           
-          <div>
+          <div className="footer-animate opacity-0">
             <h3 className="text-xl font-display font-bold mb-4">Links Rápidos</h3>
             <ul className="space-y-2">
               {['Home', 'Serviços', 'Orçamento', 'Projetos', 'Quem Somos', 'Diferenciais', 'Contato'].map((item) => (
                 <li key={item}>
                   <a 
                     href={`#${item.toLowerCase() === 'home' ? 'hero' : item.toLowerCase().replace(' ', '-')}`} 
-                    className="flex items-center text-gray-300 hover:text-white transition-colors"
+                    className="footer-link"
                   >
-                    <ChevronRight size={16} className="text-m2red mr-1" />
+                    <ChevronRight size={16} className="text-m2red mr-1 transition-transform duration-300" />
                     <span>{item}</span>
                   </a>
                 </li>
@@ -91,12 +134,12 @@ const Footer = () => {
             </ul>
           </div>
           
-          <div>
+          <div className="footer-animate opacity-0">
             <h3 className="text-xl font-display font-bold mb-4">Áreas de Atuação</h3>
             <ul className="grid grid-cols-2 gap-2">
               {['Salvador', 'Camaçari', 'Lauro de Freitas', 'Ilhéus', 'Simões Filho', 'Mata de São João'].map((area) => (
-                <li key={area} className="flex items-center text-gray-300">
-                  <span className="text-m2red mr-1">✓</span>
+                <li key={area} className="flex items-center text-gray-300 hover:text-white transition-colors group">
+                  <span className="text-m2red mr-1 transition-transform duration-300 group-hover:scale-125">✓</span>
                   <span>{area}</span>
                 </li>
               ))}
@@ -104,7 +147,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-gray-800 pt-8 mt-8 text-center text-gray-400">
+        <div className="border-t border-gray-800 pt-8 mt-8 text-center text-gray-400 footer-animate opacity-0">
           <p>© {new Date().getFullYear()} M2 Construção e Reforma. Todos os direitos reservados.</p>
         </div>
       </div>
