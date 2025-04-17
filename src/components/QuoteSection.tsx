@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { MessageSquare, Calculator } from 'lucide-react';
+import { Star } from 'lucide-react';
 
 const QuoteSection = () => {
   useEffect(() => {
@@ -26,13 +27,21 @@ const QuoteSection = () => {
     };
   }, []);
 
+  const renderStars = () => (
+    <div className="flex justify-center mb-2">
+      {[...Array(5)].map((_, index) => (
+        <Star key={index} size={20} fill="#FFD700" color="#FFD700" />
+      ))}
+    </div>
+  );
+
   return (
     <section id="quote" className="bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="section-title">Orçamento Personalizado</h2>
+          <h2 className="section-title">Orçamento em até 72 horas</h2>
           <p className="section-subtitle reveal-element opacity-0">
-            Orçamento em até 72 horas
+            Solicite agora seu orçamento
           </p>
         </div>
 
@@ -73,6 +82,7 @@ const QuoteSection = () => {
           <div className="reveal-element opacity-0 bg-gray-100 rounded-lg shadow-md p-8 border border-gray-100 hover:shadow-lg transition-all duration-300">
             <MessageSquare size={50} className="text-m2red mb-6 mx-auto" />
             <h3 className="text-2xl font-display font-semibold mb-4 text-center">Orçamento Técnico Residencial</h3>
+            {renderStars()}
             <ul className="space-y-3 mb-6">
               <li className="flex items-start">
                 <span className="text-m2red mr-2">✓</span>
