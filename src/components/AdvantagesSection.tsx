@@ -90,12 +90,12 @@ const AdvantagesSection = () => {
           {advantages.map((advantage, index) => (
             <div 
               key={index} 
-              className="reveal-advantage opacity-0 bg-m2red/90 rounded-xl p-6 text-center flex flex-col items-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              className="reveal-advantage opacity-0 bg-[#4c4c4ce6] rounded-xl p-6 text-center flex flex-col items-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
             >
-              <div className="rounded-full p-4 bg-m2red">
+              <div className="rounded-full p-4 bg-transparent">
                 {advantage.icon}
               </div>
-              <h3 className="text-xl font-display font-semibold my-3">{advantage.title}</h3>
+              <h3 className="text-xl font-display font-semibold my-3 text-white">{advantage.title}</h3>
               <p className="text-white/90">{advantage.description}</p>
             </div>
           ))}

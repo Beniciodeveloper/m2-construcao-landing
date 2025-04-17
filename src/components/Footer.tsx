@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { MapPin, Phone, Mail, ChevronRight } from 'lucide-react';
 
@@ -33,12 +32,16 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="bg-gray-900 text-white pt-16 pb-8">
+    <footer className="bg-m2green text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div className="footer-animate opacity-0">
-            <h3 className="text-xl font-display font-bold mb-4">M2 Construção e Reforma</h3>
-            <p className="text-gray-400 mb-4">
+            <img 
+              src="/lovable-uploads/94e520fc-a1c8-4f68-ad92-35fca41816da.png" 
+              alt="M2 Construção e Reforma" 
+              className="h-16 w-auto mb-4"
+            />
+            <p className="text-gray-200 mb-4">
               Soluções completas em engenharia para projetos residenciais, comerciais e industriais em Salvador e região.
             </p>
             <div className="flex space-x-4">
@@ -77,19 +80,6 @@ const Footer = () => {
               </a>
             </div>
             
-            <div className="mt-6">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.858907948763!2d-38.476883023659286!3d-12.990178061865945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7161b47e4e81669%3A0x1d240c9e10b91d2c!2sCondom%C3%ADnio%20Edif%C3%ADcio%20Profissional%20Center!5e0!3m2!1spt-BR!2sbr!4v1712539184993!5m2!1spt-BR!2sbr" 
-                width="100%" 
-                height="200" 
-                style={{ border: 0, borderRadius: '0.75rem' }}
-                allowFullScreen 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-                title="M2 Construção e Reforma Localização"
-                className="mt-4 rounded-xl shadow-md"
-              ></iframe>
-            </div>
           </div>
           
           <div className="footer-animate opacity-0">
@@ -147,7 +137,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-gray-800 pt-8 mt-8 text-center text-gray-400 footer-animate opacity-0">
+        <div className="border-t border-white/20 pt-8 mt-8 text-center text-gray-200 footer-animate opacity-0">
           <p>© {new Date().getFullYear()} M2 Construção e Reforma. Todos os direitos reservados.</p>
         </div>
       </div>

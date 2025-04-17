@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { ArrowDown } from 'lucide-react';
 
@@ -59,7 +58,7 @@ const HeroSection = () => {
             href="https://wa.me/5571991017313?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="reveal-element inline-block btn-secondary text-lg opacity-0 hover:scale-105 transform" 
+            className="reveal-element inline-block bg-[rgb(175,54,54)] text-white font-medium py-3 px-8 rounded-xl transition-all duration-300 hover:bg-[rgb(175,54,54)]/80 shadow-md hover:shadow-lg hover:scale-105 opacity-0" 
             style={{ animationDelay: '0.7s' }}
           >
             Solicitar Orçamento via WhatsApp

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Phone } from 'lucide-react';
 
@@ -49,8 +48,11 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center animate-cascade">
-            <h1 className="text-2xl font-display font-bold text-m2green">M2</h1>
-            <p className="ml-2 hidden sm:block text-gray-600">Construção e Reforma</p>
+            <img 
+              src="/lovable-uploads/94e520fc-a1c8-4f68-ad92-35fca41816da.png" 
+              alt="M2 Construção e Reforma" 
+              className="h-12 w-auto"
+            />
           </div>
 
           {/* Desktop Menu */}
