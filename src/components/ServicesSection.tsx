@@ -61,7 +61,7 @@ const ServicesSection = () => {
     },
     {
       icon: <ClipboardCheck size={40} className="text-m2green mb-4" />,
-      title: 'Acompanhamento e Fiscalização',
+      title: 'Acompanhamento/Fiscalização',
       description: 'Supervisão técnica e fiscalização completa da sua obra.',
       link: 'https://wa.me/5571991017313?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20Acompanhamento%20e%20Fiscalização%20de%20Obra'
     }

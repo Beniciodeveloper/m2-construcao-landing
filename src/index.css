@@ -5,17 +5,17 @@
 @layer base {
   :root {
     --m2green: #167B4E;
-    --m2red: rgb(152 46 46);
+    --m2red: rgb(175 54 54);
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-m2red text-white font-medium py-3 px-8 rounded-xl transition-all duration-300 hover:bg-m2red/80 shadow-md hover:shadow-lg hover:scale-105;
+    @apply bg-m2green text-white font-medium py-3 px-8 rounded-xl transition-all duration-300 hover:bg-m2green/80 shadow-md hover:shadow-lg hover:scale-105;
   }
   
   .btn-secondary {
-    @apply bg-[rgb(152,46,46)] text-white font-medium py-3 px-8 rounded-xl transition-all duration-300 hover:bg-[rgb(152,46,46)]/80 shadow-md hover:shadow-lg hover:scale-105;
+    @apply bg-m2red text-white font-medium py-3 px-8 rounded-xl transition-all duration-300 hover:bg-m2red/80 shadow-md hover:shadow-lg hover:scale-105;
   }
   
   .service-card {
