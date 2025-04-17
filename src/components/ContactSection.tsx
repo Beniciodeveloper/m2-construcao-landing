@@ -66,8 +66,8 @@ const ContactSection = () => {
                         <a href="tel:+5571983209903" className="hover:text-m2green transition-colors">
                           (71) 98320-9903
                         </a><br />
-                        <a href="tel:+5571991017313" className="hover:text-m2green transition-colors">
-                          (71) 99101-7313 (WhatsApp)
+                        <a href="tel:+5571983209903" className="hover:text-m2green transition-colors">
+                          (71) 98320-9903 (WhatsApp)
                         </a>
                       </p>
                     </div>

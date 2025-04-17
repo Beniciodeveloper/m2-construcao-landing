@@ -46,7 +46,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://wa.me/5571991017313" 
+                href="https://wa.me/5571983209903" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="footer-social"
@@ -57,7 +57,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href="https://wa.me/5571991017313" 
+                href="https://www.instagram.com/m2engenharia_/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="footer-social"
