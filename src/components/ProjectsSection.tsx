@@ -78,7 +78,7 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="bg-gray-50">
+    <section id="projects" className="bg-gray-80">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="section-title">Projetos e Clientes</h2>
