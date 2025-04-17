@@ -1,6 +1,5 @@
-
 import React, { useEffect } from 'react';
-import { Wrench, Zap, Leaf, ClipboardList, FileText, Phone, Home } from 'lucide-react';
+import { Wrench, Zap, Leaf, ClipboardList, FileText, ClipboardCheck } from 'lucide-react';
 
 const ServicesSection = () => {
   useEffect(() => {
@@ -8,15 +7,12 @@ const ServicesSection = () => {
     
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !entry.target.classList.contains('has-animated')) {
           setTimeout(() => {
-            entry.target.classList.add('animate-fade-in-up');
+            entry.target.classList.add('animate-fade-in-up', 'has-animated');
             entry.target.classList.remove('opacity-0');
-            // Ensure element stays visible after animation
-            setTimeout(() => {
-              entry.target.classList.add('opacity-100');
-            }, 300);
-          }, index * 150); // Stagger the animations
+            entry.target.classList.add('opacity-100');
+          }, index * 150);
         }
       });
     }, { threshold: 0.1 });
@@ -64,15 +60,15 @@ const ServicesSection = () => {
       link: 'https://wa.me/5571991017313?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20Consultoria%20Técnica'
     },
     {
-      icon: <Home size={40} className="text-m2green mb-4" />,
-      title: 'Design de Interiores',
-      description: 'Transforme seu espaço com projetos personalizados e elegantes.',
-      link: 'https://wa.me/5571991017313?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20Design%20de%20Interiores'
+      icon: <ClipboardCheck size={40} className="text-m2green mb-4" />,
+      title: 'Acompanhamento/Fiscalização',
+      description: 'Supervisão técnica e fiscalização completa da sua obra.',
+      link: 'https://wa.me/5571991017313?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20Acompanhamento%20e%20Fiscalização%20de%20Obra'
     }
   ];
 
   return (
-    <section id="services" className="bg-gray-50 py-24">
+    <section id="services" className="bg-gray-100 py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="section-title">Nossos Serviços</h2>

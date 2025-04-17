@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { MessageSquare, Calculator } from 'lucide-react';
 
@@ -8,13 +7,10 @@ const QuoteSection = () => {
     
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fade-in');
+        if (entry.isIntersecting && !entry.target.classList.contains('has-animated')) {
+          entry.target.classList.add('animate-fade-in', 'has-animated');
           entry.target.classList.remove('opacity-0');
-          // Ensure element remains visible after animation
-          setTimeout(() => {
-            entry.target.classList.add('opacity-100');
-          }, 300);
+          entry.target.classList.add('opacity-100');
         }
       });
     }, { threshold: 0.1 });
@@ -36,14 +32,14 @@ const QuoteSection = () => {
         <div className="text-center mb-16">
           <h2 className="section-title">Orçamento Personalizado</h2>
           <p className="section-subtitle reveal-element opacity-0">
-            Você escolhe: atendimento técnico e detalhado ou consultivo e simplificado
+            Orçamento em até 72 horas
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <div className="reveal-element opacity-0 bg-gray-50 rounded-lg shadow-md p-8 border border-gray-100 hover:shadow-lg transition-all duration-300">
+          <div className="reveal-element opacity-0 bg-gray-100 rounded-lg shadow-md p-8 border border-gray-100 hover:shadow-lg transition-all duration-300">
             <Calculator size={50} className="text-m2green mb-6 mx-auto" />
-            <h3 className="text-2xl font-display font-semibold mb-4 text-center">Orçamento Técnico</h3>
+            <h3 className="text-2xl font-display font-semibold mb-4 text-center">Orçamento Técnico Empresarial</h3>
             <ul className="space-y-3 mb-6">
               <li className="flex items-start">
                 <span className="text-m2green mr-2">✓</span>
@@ -74,9 +70,9 @@ const QuoteSection = () => {
             </div>
           </div>
 
-          <div className="reveal-element opacity-0 bg-gray-50 rounded-lg shadow-md p-8 border border-gray-100 hover:shadow-lg transition-all duration-300">
+          <div className="reveal-element opacity-0 bg-gray-100 rounded-lg shadow-md p-8 border border-gray-100 hover:shadow-lg transition-all duration-300">
             <MessageSquare size={50} className="text-m2red mb-6 mx-auto" />
-            <h3 className="text-2xl font-display font-semibold mb-4 text-center">Orçamento Consultivo</h3>
+            <h3 className="text-2xl font-display font-semibold mb-4 text-center">Orçamento Técnico Residencial</h3>
             <ul className="space-y-3 mb-6">
               <li className="flex items-start">
                 <span className="text-m2red mr-2">✓</span>

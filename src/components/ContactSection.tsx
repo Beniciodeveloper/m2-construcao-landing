@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { MapPin, Phone, Mail, Instagram, Youtube, Clock } from 'lucide-react';
 
@@ -31,7 +30,7 @@ const ContactSection = () => {
   }, []);
 
   return (
-    <section id="contact" className="bg-gray-50 py-24">
+    <section id="contact" className="bg-gray-100 py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="section-title">Entre em Contato</h2>
@@ -144,7 +143,7 @@ const ContactSection = () => {
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
                   title="M2 Construção e Reforma Localização"
-                  className="rounded-xl shadow-md mt-4"
+                  className="rounded-xl shadow-md mt-8"
                 ></iframe>
               </div>
             </div>

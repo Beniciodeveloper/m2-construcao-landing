@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 
 const AboutSection = () => {
@@ -30,7 +29,7 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section id="about" className="bg-white">
+    <section id="about" className="bg-gray-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="section-title">Quem Somos</h2>
