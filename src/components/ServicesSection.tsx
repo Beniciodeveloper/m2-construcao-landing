@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Wrench, Zap, Leaf, ClipboardList, FileText, ClipboardCheck } from 'lucide-react';
+import { Wrench, Zap, Leaf, ClipboardList, FileText, ClipboardCheck, Phone } from 'lucide-react';
 
 const ServicesSection = () => {
   useEffect(() => {
