@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { 
   Carousel,
@@ -5,6 +6,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi
 } from "@/components/ui/carousel"
 import { Circle, CircleDot } from "lucide-react";
 import useEmblaCarousel from 'embla-carousel-react';
@@ -61,6 +63,24 @@ const reviews = [
 
 const ProjectsSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [carouselApi, setCarouselApi] = useState<CarouselApi>();
+
+  // Update active index when the carousel changes
+  useEffect(() => {
+    if (!carouselApi) return;
+
+    const onSelect = () => {
+      setActiveIndex(carouselApi.selectedScrollSnap());
+    };
+
+    carouselApi.on('select', onSelect);
+    // Initial call to set the first slide
+    onSelect();
+
+    return () => {
+      carouselApi.off('select', onSelect);
+    };
+  }, [carouselApi]);
 
   useEffect(() => {
     const elements = document.querySelectorAll('.reveal-element');
@@ -94,7 +114,7 @@ const ProjectsSection = () => {
         <div className="max-w-6xl mx-auto">
           {/* Projects Carousel */}
           <div className="reveal-element opacity-0 mb-16">
-            <Carousel onSelect={(api) => setActiveIndex(api.selectedScrollSnap())}>
+            <Carousel setApi={setCarouselApi}>
               <CarouselContent>
                 {projects.map((project) => (
                   <CarouselItem key={project.id}>
