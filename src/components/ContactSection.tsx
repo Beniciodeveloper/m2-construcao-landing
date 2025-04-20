@@ -104,7 +104,7 @@ const ContactSection = () => {
                 <h4 className="font-semibold mb-3 text-center">Redes Sociais</h4>
                 <div className="flex justify-center space-x-4 mb-6">
                   <a 
-                    href="https://wa.me/5571991017313" 
+                    href="https://wa.me/5571983209903" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="bg-[#25D366] text-white p-3 rounded-full hover:bg-[#25D366]/80 transition-all duration-300 hover:scale-110 transform"
@@ -115,7 +115,7 @@ const ContactSection = () => {
                     </svg>
                   </a>
                   <a 
-                    href="https://wa.me/5571991017313" 
+                    href="https://wa.me/5571983209903" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="bg-[#E4405F] text-white p-3 rounded-full hover:bg-[#E4405F]/80 transition-all duration-300 hover:scale-110 transform"
@@ -124,7 +124,7 @@ const ContactSection = () => {
                     <Instagram className="w-5 h-5" />
                   </a>
                   <a 
-                    href="https://wa.me/5571991017313" 
+                    href="https://wa.me/5571983209903" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="bg-[#FF0000] text-white p-3 rounded-full hover:bg-[#FF0000]/80 transition-all duration-300 hover:scale-110 transform"

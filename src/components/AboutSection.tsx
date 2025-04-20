@@ -84,7 +84,7 @@ const AboutSection = () => {
               </p>
 
               <a 
-                href="https://wa.me/5571991017313?text=Olá,%20gostaria%20de%20conhecer%20mais%20sobre%20a%20M2%20Construção" 
+                href="https://wa.me/5571983209903?text=Olá,%20gostaria%20de%20conhecer%20mais%20sobre%20a%20M2%20Construção" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn-primary inline-block"

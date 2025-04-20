@@ -103,7 +103,7 @@ const AdvantagesSection = () => {
 
         <div className="text-center mt-12 reveal-element opacity-0">
           <a 
-            href="https://wa.me/5571991017313?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20diferenciais%20da%20M2" 
+            href="https://wa.me/5571983209903?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20diferenciais%20da%20M2" 
             target="_blank" 
             rel="noopener noreferrer"
             className="bg-white text-m2green hover:bg-gray-100 font-medium py-3 px-8 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg inline-block hover:scale-105 transform"

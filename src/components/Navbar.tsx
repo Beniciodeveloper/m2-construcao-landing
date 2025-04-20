@@ -68,7 +68,7 @@ const Navbar = () => {
               </a>
             ))}
             <a 
-              href="https://wa.me/5571991017313" 
+              href="https://wa.me/5571983209903" 
               target="_blank" 
               rel="noopener noreferrer"
               className="btn-primary flex items-center animate-cascade opacity-0"
@@ -117,7 +117,7 @@ const Navbar = () => {
                 </a>
               ))}
               <a 
-                href="https://wa.me/5571991017313" 
+                href="https://wa.me/5571983209903" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn-primary text-center mt-2 animate-cascade opacity-0"

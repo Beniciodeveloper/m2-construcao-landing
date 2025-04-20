@@ -60,7 +60,7 @@ const QuoteSection = () => {
             </ul>
             <div className="text-center mt-auto">
               <a 
-                href="https://wa.me/5571991017313?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20técnico%20detalhado" 
+                href="https://wa.me/5571983209903?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20técnico%20detalhado" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn-primary inline-block"
@@ -93,7 +93,7 @@ const QuoteSection = () => {
             </ul>
             <div className="text-center mt-auto">
               <a 
-                href="https://wa.me/5571991017313?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20consultivo%20simplificado" 
+                href="https://wa.me/5571983209903?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20consultivo%20simplificado" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn-secondary inline-block"
