@@ -14,19 +14,33 @@ const projects = [
     id: 1,
     title: 'Reforma Residencial',
     description: 'Transformação completa de apartamento em Salvador',
-    image: '/path-to-your-first-image.jpg'
+    image: '/projeto1.webp'
   },
   {
     id: 2,
     title: 'Projeto Comercial',
     description: 'Escritório moderno em Lauro de Freitas',
-    image: '/path-to-your-second-image.jpg'
+    image: '/projeto2.webp'
   },
   {
     id: 3,
     title: 'Construção Industrial',
     description: 'Galpão industrial em Camaçari',
-    image: '/path-to-your-third-image.jpg'
+    image: '/projeto3.webp'
+  },
+
+  {
+    id: 4,
+    title: 'Construção Industrial',
+    description: 'Galpão industrial em Camaçari',
+    image: '/projeto4.webp'
+  },
+
+{
+    id: 5,
+    title: 'Construção Industrial',
+    description: 'Galpão industrial em Camaçari',
+    image: '/projeto5.webp'
   }
 ];
 
