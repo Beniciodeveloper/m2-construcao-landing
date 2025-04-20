@@ -1,6 +1,5 @@
-
 import React, { useEffect } from 'react';
-import { Wrench, Zap, Leaf, ClipboardList, FileText, ClipboardCheck, Phone } from 'lucide-react';
+import { Wrench, Zap, Leaf, ClipboardList, FileText, ClipboardCheck } from 'lucide-react';
 
 const ServicesSection = () => {
   useEffect(() => {
@@ -39,38 +38,32 @@ const ServicesSection = () => {
     {
       icon: <Wrench size={40} className="text-m2green" />,
       title: 'Engenharia Civil',
-      description: 'Obras e reformas completas, do planejamento à execução.',
-      link: 'https://wa.me/5571991017313?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20serviços%20de%20Engenharia%20Civil'
+      description: 'Obras e reformas completas, do planejamento à execução.'
     },
     {
       icon: <Zap size={40} className="text-m2green" />,
       title: 'Engenharia Elétrica',
-      description: 'Projetos elétricos, instalações e manutenções completas.',
-      link: 'https://wa.me/5571991017313?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20serviços%20de%20Engenharia%20Elétrica'
+      description: 'Projetos elétricos, instalações e manutenções completas.'
     },
     {
       icon: <Leaf size={40} className="text-m2green" />,
       title: 'Engenharia Ambiental',
-      description: 'Soluções sustentáveis para adequação e licenciamento.',
-      link: 'https://wa.me/5571991017313?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20serviços%20de%20Engenharia%20Ambiental'
+      description: 'Soluções sustentáveis para adequação e licenciamento.'
     },
     {
       icon: <ClipboardList size={40} className="text-m2green" />,
       title: 'Gerenciamento de Projetos',
-      description: 'Coordenação de todas as etapas do seu projeto com eficiência.',
-      link: 'https://wa.me/5571991017313?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20Gerenciamento%20de%20Projetos'
+      description: 'Coordenação de todas as etapas do seu projeto com eficiência.'
     },
     {
       icon: <FileText size={40} className="text-m2green" />,
       title: 'Consultoria Técnica',
-      description: 'Assessoria especializada para seu projeto, obra ou reforma.',
-      link: 'https://wa.me/5571991017313?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20Consultoria%20Técnica'
+      description: 'Assessoria especializada para seu projeto, obra ou reforma.'
     },
     {
       icon: <ClipboardCheck size={40} className="text-m2green" />,
       title: 'Acompanhamento/Fiscalização',
-      description: 'Supervisão técnica e fiscalização completa da sua obra.',
-      link: 'https://wa.me/5571991017313?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20Acompanhamento%20e%20Fiscalização%20de%20Obra'
+      description: 'Supervisão técnica e fiscalização completa da sua obra.'
     }
   ];
 
@@ -95,16 +88,7 @@ const ServicesSection = () => {
             >
               {service.icon}
               <h3 className="text-xl font-display font-semibold mt-4 mb-3">{service.title}</h3>
-              <p className="text-gray-600 mb-6">{service.description}</p>
-              <a 
-                href={service.link}
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="mt-auto inline-flex items-center gap-2 px-6 py-2 bg-m2green text-white rounded-lg hover:bg-m2green/90 transition-colors"
-              >
-                <Phone size={16} />
-                <span>Solicitar via WhatsApp</span>
-              </a>
+              <p className="text-gray-600">{service.description}</p>
             </div>
           ))}
         </div>
@@ -114,4 +98,3 @@ const ServicesSection = () => {
 };
 
 export default ServicesSection;
-
