@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { 
   Carousel,
   CarouselContent,
@@ -6,7 +6,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-import { CircleDot } from "lucide-react";
+import { Circle, CircleDot } from "lucide-react";
+import useEmblaCarousel from 'embla-carousel-react';
 
 // Sample projects data - replace with your actual projects
 const projects = [
@@ -59,6 +60,8 @@ const reviews = [
 ];
 
 const ProjectsSection = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   useEffect(() => {
     const elements = document.querySelectorAll('.reveal-element');
     
@@ -91,7 +94,7 @@ const ProjectsSection = () => {
         <div className="max-w-6xl mx-auto">
           {/* Projects Carousel */}
           <div className="reveal-element opacity-0 mb-16">
-            <Carousel>
+            <Carousel onSelect={(api) => setActiveIndex(api.selectedScrollSnap())}>
               <CarouselContent>
                 {projects.map((project) => (
                   <CarouselItem key={project.id}>
@@ -117,10 +120,17 @@ const ProjectsSection = () => {
             {/* Dots Navigation */}
             <div className="flex justify-center gap-2 mt-4">
               {projects.map((_, index) => (
-                <CircleDot 
-                  key={index}
-                  className="w-4 h-4 text-m2green"
-                />
+                index === activeIndex ? (
+                  <CircleDot 
+                    key={index}
+                    className="w-4 h-4 text-m2green"
+                  />
+                ) : (
+                  <Circle 
+                    key={index}
+                    className="w-4 h-4 text-gray-300"
+                  />
+                )
               ))}
             </div>
           </div>
