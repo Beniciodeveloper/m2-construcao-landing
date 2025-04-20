@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Wrench, Zap, Leaf, ClipboardList, FileText, ClipboardCheck, Phone } from 'lucide-react';
 
@@ -78,7 +79,7 @@ const ServicesSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="reveal-service text-3xl font-display font-bold mb-4 opacity-0 service-title-animated">
-            Nossos Servi��os
+            Nossos Serviços
           </h2>
           <p className="reveal-service text-lg text-gray-600 max-w-3xl mx-auto opacity-0 service-title-animated" 
              style={{ transitionDelay: '200ms' }}>
@@ -113,3 +114,4 @@ const ServicesSection = () => {
 };
 
 export default ServicesSection;
+
