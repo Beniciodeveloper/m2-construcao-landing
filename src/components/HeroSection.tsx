@@ -7,17 +7,17 @@ const HeroSection = () => {
     const elements = document.querySelectorAll('.reveal-element');
     
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          // Smoother animation with longer duration and easing
-          setTimeout(() => {
-            entry.target.classList.add('animate-fade-in');
-            entry.target.classList.remove('opacity-0');
-            entry.target.classList.add('opacity-100');
-          }, index * 300); // Increased delay between elements for smoother cascade
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !entry.target.classList.contains('has-animated')) {
+          entry.target.classList.add('has-animated');
+          entry.target.classList.remove('opacity-0');
+          entry.target.classList.add('opacity-100', 'animate-fade-in-up');
         }
       });
-    }, { threshold: 0.2 }); // Slightly increased threshold for better timing
+    }, { 
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    });
     
     elements.forEach(element => {
       observer.observe(element);
@@ -44,29 +44,29 @@ const HeroSection = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto text-center text-white">
-          <h1 className="reveal-element text-4xl md:text-6xl font-display font-bold mb-6 opacity-0 transition-all duration-700" 
-              style={{ transitionDelay: '200ms' }}>
+          <h1 className="reveal-element text-4xl md:text-6xl font-display font-bold mb-6 opacity-0 transition-all duration-1000" 
+              style={{ transitionDelay: '300ms' }}>
             M2 Construção e Reforma
           </h1>
-          <h2 className="reveal-element text-xl md:text-3xl font-display mb-6 opacity-0 transition-all duration-700" 
-              style={{ transitionDelay: '400ms' }}>
+          <h2 className="reveal-element text-xl md:text-3xl font-display mb-6 opacity-0 transition-all duration-1000" 
+              style={{ transitionDelay: '600ms' }}>
             Soluções completas em Engenharia
           </h2>
-          <p className="reveal-element text-lg md:text-xl mb-10 mx-auto max-w-2xl opacity-0 transition-all duration-700" 
-             style={{ transitionDelay: '600ms' }}>
+          <p className="reveal-element text-lg md:text-xl mb-10 mx-auto max-w-2xl opacity-0 transition-all duration-1000" 
+             style={{ transitionDelay: '900ms' }}>
             Projetos residenciais, comerciais e industriais com excelência em Salvador e região
           </p>
           <a 
             href="https://wa.me/5571983209903?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="reveal-element inline-block bg-[rgb(175,54,54)] text-white font-medium py-3 px-8 rounded-xl transition-all duration-700 hover:bg-[rgb(175,54,54)]/80 shadow-md hover:shadow-lg hover:scale-105 opacity-0" 
-            style={{ transitionDelay: '800ms' }}
+            className="reveal-element inline-block bg-[rgb(175,54,54)] text-white font-medium py-3 px-8 rounded-xl transition-all duration-1000 hover:bg-[rgb(175,54,54)]/80 shadow-md hover:shadow-lg hover:scale-105 opacity-0" 
+            style={{ transitionDelay: '1200ms' }}
           >
             Solicitar Orçamento via WhatsApp
           </a>
           
-          <div className="reveal-element mt-24 animate-bounce opacity-0" style={{ transitionDelay: '1000ms' }}>
+          <div className="reveal-element mt-24 animate-bounce opacity-0" style={{ transitionDelay: '1500ms' }}>
             <a href="#services" className="text-white">
               <ArrowDown size={36} className="mx-auto" />
             </a>

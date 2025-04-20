@@ -10,15 +10,15 @@ const ServicesSection = () => {
       entries.forEach((entry, index) => {
         if (entry.isIntersecting && !entry.target.classList.contains('has-animated')) {
           setTimeout(() => {
-            entry.target.classList.add('animate-fade-in', 'has-animated');
+            entry.target.classList.add('has-animated', 'animate-fade-in-up');
             entry.target.classList.remove('opacity-0');
             entry.target.classList.add('opacity-100');
-          }, index * 200); // Smoother stagger between cards
+          }, index * 150); // Staggered animation with shorter delay for smoother appearance
         }
       });
     }, { 
-      threshold: 0.2,
-      rootMargin: '50px' // Start animation slightly before the element comes into view
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px' // Start animation slightly before the element comes into view
     });
     
     elements.forEach(element => {
@@ -75,11 +75,11 @@ const ServicesSection = () => {
     <section id="services" className="bg-gray-100 py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="reveal-service text-3xl font-display font-bold mb-4 opacity-0 transition-all duration-700">
+          <h2 className="reveal-service text-3xl font-display font-bold mb-4 opacity-0 transition-all duration-1000">
             Nossos Serviços
           </h2>
-          <p className="reveal-service text-lg text-gray-600 max-w-3xl mx-auto opacity-0 transition-all duration-700" 
-             style={{ transitionDelay: '200ms' }}>
+          <p className="reveal-service text-lg text-gray-600 max-w-3xl mx-auto opacity-0 transition-all duration-1000" 
+             style={{ transitionDelay: '300ms' }}>
             Oferecemos soluções completas em engenharia, do projeto à entrega final
           </p>
         </div>
@@ -88,8 +88,8 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div 
               key={index} 
-              className="reveal-service opacity-0 service-card flex flex-col items-center text-center transition-all duration-700"
-              style={{ transitionDelay: `${(index + 2) * 150}ms` }}
+              className="reveal-service opacity-0 service-card flex flex-col items-center text-center transition-all duration-1000"
+              style={{ transitionDelay: `${(index * 150) + 400}ms` }}
             >
               <div className="bg-gray-50 p-3 rounded-full mb-2">
                 {service.icon}
