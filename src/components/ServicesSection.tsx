@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Wrench, Zap, Leaf, ClipboardList, FileText, ClipboardCheck, Phone } from 'lucide-react';
 
@@ -9,13 +10,16 @@ const ServicesSection = () => {
       entries.forEach((entry, index) => {
         if (entry.isIntersecting && !entry.target.classList.contains('has-animated')) {
           setTimeout(() => {
-            entry.target.classList.add('animate-fade-in-up', 'has-animated');
+            entry.target.classList.add('animate-fade-in', 'has-animated');
             entry.target.classList.remove('opacity-0');
             entry.target.classList.add('opacity-100');
-          }, index * 150);
+          }, index * 200); // Smoother stagger between cards
         }
       });
-    }, { threshold: 0.1 });
+    }, { 
+      threshold: 0.2,
+      rootMargin: '50px' // Start animation slightly before the element comes into view
+    });
     
     elements.forEach(element => {
       observer.observe(element);
@@ -71,8 +75,11 @@ const ServicesSection = () => {
     <section id="services" className="bg-gray-100 py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="section-title">Nossos Serviços</h2>
-          <p className="section-subtitle">
+          <h2 className="reveal-service text-3xl font-display font-bold mb-4 opacity-0 transition-all duration-700">
+            Nossos Serviços
+          </h2>
+          <p className="reveal-service text-lg text-gray-600 max-w-3xl mx-auto opacity-0 transition-all duration-700" 
+             style={{ transitionDelay: '200ms' }}>
             Oferecemos soluções completas em engenharia, do projeto à entrega final
           </p>
         </div>
@@ -81,7 +88,8 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div 
               key={index} 
-              className="reveal-service opacity-0 service-card flex flex-col items-center text-center"
+              className="reveal-service opacity-0 service-card flex flex-col items-center text-center transition-all duration-700"
+              style={{ transitionDelay: `${(index + 2) * 150}ms` }}
             >
               <div className="bg-gray-50 p-3 rounded-full mb-2">
                 {service.icon}
