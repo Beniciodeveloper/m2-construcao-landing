@@ -35,6 +35,40 @@
     @apply fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg z-50 hover:bg-[#20ba5a] transition-colors hover:scale-110;
   }
 
+  /* Updated animation classes */
+  .hero-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+  }
+
+  .hero-animate.has-animated {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  .service-animated {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  .service-animated.has-animated {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  .service-title-animated {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+
+  .service-title-animated.has-animated {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
   .reveal-element.has-animated,
   .reveal-service.has-animated {
     opacity: 1 !important;
@@ -45,7 +79,7 @@
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
@@ -65,7 +99,7 @@
 @keyframes cascadeDown {
   0% {
     opacity: 0;
-    transform: translateY(-30px);
+    transform: translateY(-40px);
   }
   100% {
     opacity: 1;
@@ -74,15 +108,15 @@
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
+  animation: fadeIn 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
+  animation: fadeInUp 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
 }
 
 .animate-cascade {
-  animation: cascadeDown 0.7s ease-out forwards;
+  animation: cascadeDown 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
 }
 
 /* Make sure sections have proper spacing */
