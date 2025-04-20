@@ -64,7 +64,7 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
                 // Brand colors
-                m2red: '#e38484',
+                m2red: 'rgb(175 54 54)',
                 m2green: '#167B4E',
 			},
 			borderRadius: {
