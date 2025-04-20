@@ -187,20 +187,27 @@ const ProjectsSection = () => {
                       ))}
                     </div>
                     <p className="text-lg mb-4 italic text-gray-700">{review.text}</p>
+
                     <div className="flex items-center">
+                    
                       <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-700 font-bold">
                         {review.author.charAt(0)}
                       </div>
+                      
                       <div className="ml-4">
                         <p className="font-semibold">{review.author}</p>
                         {review.company && (
                           <p className="text-gray-600 text-sm">{review.company}</p>
                         )}
                       </div>
+                      
                     </div>
+                    
                   </div>
+                  
                 ))}
               </div>
+              
             </div>
           </div>
         </div>
