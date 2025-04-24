@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Wrench, Zap, Leaf, ClipboardList, FileText, ClipboardCheck } from 'lucide-react';
 
@@ -62,7 +63,7 @@ const ServicesSection = () => {
     },
     {
       icon: <ClipboardCheck size={40} className="text-m2green" />,
-      title: 'Acompanhamento/Fiscalização',
+      title: 'Acompanhamento e Fiscalização',
       description: 'Supervisão técnica e fiscalização completa da sua obra.'
     }
   ];

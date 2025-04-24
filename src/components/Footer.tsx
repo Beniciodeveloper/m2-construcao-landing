@@ -46,7 +46,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://wa.me/5571983209903" 
+                href="https://wa.me/5571983209903?text=Olá,%20vim%20pelo%20site%20da%20M2%20e%20gostaria%20de%20solicitar%20um%20orçamento" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="footer-social"
@@ -57,7 +57,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href="https://www.instagram.com/m2engenharia_/" 
+                href="https://www.instagram.com/m2engenharia_?igsh=MTRlbWRyZ2p6bmhtcw==" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="footer-social"
@@ -68,7 +68,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href="https://wa.me/5571983209903" 
+                href="https://m.youtube.com/@m2podcastba" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="footer-social"
@@ -79,7 +79,6 @@ const Footer = () => {
                 </svg>
               </a>
             </div>
-            
           </div>
           
           <div className="footer-animate opacity-0">

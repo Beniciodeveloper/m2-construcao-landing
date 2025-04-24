@@ -51,7 +51,7 @@ const AboutSection = () => {
             <div className="reveal-element opacity-0">
               <h3 className="text-2xl font-display font-semibold mb-4">Nossa História</h3>
               <p className="text-gray-700 mb-6">
-                A M2 Construção e Reforma surgiu da paixão pela engenharia e pelo desejo de transformar espaços com qualidade e excelência técnica. Há anos no mercado da Bahia, crescemos com base na confiança de nossos clientes e no compromisso com resultados excepcionais.
+                A M2 Construção e Reforma surgiu da paixão pela engenharia e pelo desejo de transformar espaços com qualidade e excelência técnica. Crescemos com base na confiança de nossos clientes e no compromisso com resultados excepcionais.
               </p>
             </div>
 
@@ -84,7 +84,7 @@ const AboutSection = () => {
               </p>
 
               <a 
-                href="https://wa.me/5571983209903?text=Olá,%20gostaria%20de%20conhecer%20mais%20sobre%20a%20M2%20Construção" 
+                href="https://wa.me/5571983209903?text=Olá,%20vim%20pelo%20site%20da%20M2%20e%20gostaria%20de%20solicitar%20um%20orçamento" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn-primary inline-block"
